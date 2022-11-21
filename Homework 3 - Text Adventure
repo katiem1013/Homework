@@ -1,1 +1,59 @@
+weapons = ["sword", "dagger"]
+fightMode = False
+monster_health = 25
+
+
+def fight():
+	sword_damage = 5
+	dagger_damage = 3
+	global monster_health
+	if monster_health >= 1:
+		usr = input("which weapon you want to use: ")
+		usr_words = usr.split(" ")  # list
+		for word in usr_words:
+			if word in weapons:
+				if word == "sword":
+					print("With this you do 5 damage. On we go!")
+					monster_health = monster_health - sword_damage
+					fight()
+
+				elif word == "dagger":
+					print("With this you do 3 damage. On we go!")
+					monster_health = monster_health - dagger_damage
+					fight()
+
+			else:
+				print("please choose a weapon you actually have")
+				fight()
+
+	elif monster_health <= 1:
+		print("The monster is dead!")
+		exit()
+
+	else:
+		print("")
+
+
+usr = input("Where to? ").lower()
+
+if usr in ["n", "north"]:
+	print("Oh this looks like trouble!")
+	usr = input("Will you fight?").lower()
+	if usr in ["yes", "y", "hell yeah"]:
+		fightMode = True
+		if fightMode:
+			fight()
+
+elif usr == "south":
+	print("There is nothing that way.")
+
+elif usr == "west":
+	print("There is nothing that way.")
+
+elif usr == "east":
+	print("There is nothing that way.")
+
+else:
+	print("What does that mean?")
+
 
