@@ -1,1 +1,27 @@
+# exercise 1
+tupleList = [(), (), ('',), ('a', 'b'), ('a', 'b', 'c'), ('d')]
+tupleList2 = tupleList[2:-1]
+print(tupleList2)
 
+# exercise 2
+print()
+sequence = dict(enumerate([i ** 2 for i in range(1, 21)], 1))
+for number, val in sequence.items():
+    sequence_dict = {val}
+    print(sequence_dict)
+
+# exercise 3
+print()
+room_items = {"item1": {"Name": "Lamp", "Colour": "Red"},
+"item_2": {"Name": "Table", "Colour": "Brown", "Type": 0},
+"item_3": {"Name": "Lamp", "Colour": "Red"},
+"item_4": {"Name": "Chair", "Colour": "Green", "Type": 1}
+}
+
+new_room_items = {}
+
+for key, value in room_items.items():
+    if value not in new_room_items.values():
+        new_room_items[key] = value
+
+print(new_room_items)
